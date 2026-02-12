@@ -1,0 +1,22 @@
+CREATE TABLE users (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(100) NOT NULL,
+	email VARCHAR(150) UNIQUE NOT NULL,
+	password VARCHAR(255) NOT NULL,
+	balance NUMERIC(10,2) DEFAULT 0,
+	created_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE transfers (
+	id SERIAL PRIMARY KEY,
+	from_user INT NOT NULL,
+	to_user INT NOT NULL,
+	amount NUMERIC(10,2) NOT NULL,
+	created_at TIMESTAMP DEFAULT NOW(),
+
+	CONSTRAINT fk_from_user
+	FOREIGN KEY (from_user) REFERENCES users(id),
+
+	CONSTRAINT fk_to_user
+	FOREIGN KEY (to_user) REFERENCES users(id)
+);
