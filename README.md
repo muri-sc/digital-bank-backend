@@ -1,0 +1,5 @@
+- Install dependencies npm install
+- Create .env acording to .env.example
+- Create database tables acording to database/schema.sql
+- Run the server with npm run dev
+- Protected routes require: Authorization: Bearer <token>
