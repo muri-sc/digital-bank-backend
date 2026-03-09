@@ -1,4 +1,4 @@
-- Install dependencies npm install
+- Install dependencies with npm install
 - Create .env acording to .env.example
 - Create database tables acording to database/schema.sql
 - Run the server with npm run dev
